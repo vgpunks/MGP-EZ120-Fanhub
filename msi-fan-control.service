@@ -1,0 +1,13 @@
+[Unit]
+Description=MSI MPG EZ120 ARGB Fan Hub - Silent Profile
+After=multi-user.target
+Wants=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStartPre=/bin/sleep 5
+ExecStart=/usr/bin/python3 /usr/local/bin/msi-fan-control.py
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
